@@ -50,12 +50,11 @@ Primary key use to uniquely identify each row in a table.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
-It is a forigen a key so we will give it a name like "ParentTableName_id". 
+It is a foreign a key so we will give it a name like "ParentTableName_id". 
 
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
 
-We need to make a third table that will have the forigen key relationship with these two tables. In this way we break the many_to_many 
-relationship into one_to_many relationship with each of two tables with the third table.  
+We need to make a third table/bridge table that will have the forigen key relationship with these two tables. In this way we break the many_to_many relationship into one_to_many relationship with each of two tables with the third table.  
 
 
 ## Minimum Viable Product
