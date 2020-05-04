@@ -18,28 +18,28 @@ router.get("/", async (req, res, next) => {
 })
 
 // Get Project Detail by ID
-// router.get("/:id", async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
     
 
-//     try {
-//            const project_id = req.params.id
-//            const project = await projectModel.projectByID(project_id)  
-//            const updatedProject = {...project, completed: project.completed == 0 ? false : true}    
+    try {
+           const project_id = req.params.id
+           const project = await projectModel.projectByID(project_id)  
+           const updatedProject = {...project, completed: project.completed == 0 ? false : true}    
            
-//            // Getting All Task Related of Project
-//            const tasks = await projectModel.tasksByProjectID(project_id)
-//            const updatedTasks = tasks.map((task)=> task = {...task, completed: task.completed == 0 ? false : true})
+           // Getting All Task Related of Project
+           const tasks = await projectModel.tasksByProjectID(project_id)
+           const updatedTasks = tasks.map((task)=> task = {...task, completed: task.completed == 0 ? false : true})
 
-//             // Getting All Resources Related of Project
-//             const resources = await projectModel.resourcesByProjectID(project_id)          
+            // Getting All Resources Related of Project
+            const resources = await projectModel.resourcesByProjectID(project_id)          
            
-//            const projectData = {...updatedProject,tasks:updatedTasks,resources}
-//            res.json(projectData)
-//     } catch(err) {
-//         next(err)
-//     }
+           const projectData = {...updatedProject,tasks:updatedTasks,resources}
+           res.json(projectData)
+    } catch(err) {
+        next(err)
+    }
 
-// })
+})
 
 // Add Project
 router.post("/", validateProject(), async (req, res, next) => {

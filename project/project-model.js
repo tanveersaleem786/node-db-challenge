@@ -12,12 +12,12 @@ function tasksByProjectID(id) {
     return db("tasks").where("project_id",id).select("id","description","notes","completed")
 }
 
-// function resourcesByProjectID(id) {
-//     return db("projects_resources as pr")
-//            .join("resources as r", "pr.resource_id", "r.id")
-//            .where("pr.project_id",id)
-//            .select("r.id","r.name","r.description")
-// }
+function resourcesByProjectID(id) {
+    return db("projects_resources as pr")
+           .join("resources as r", "pr.resource_id", "r.id")
+           .where("pr.project_id",id)
+           .select("r.id","r.name","r.description")
+}
 
 function addProject(project) {   
     return db("projects").insert(project)
