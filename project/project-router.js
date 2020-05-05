@@ -33,7 +33,7 @@ router.get("/:id", async (req, res, next) => {
             // Getting All Resources Related of Project
             const resources = await projectModel.resourcesByProjectID(project_id)          
            
-           const projectData = {...updatedProject,tasks:updatedTasks,resources}
+           const projectData = {...updatedProject,tasks:updatedTasks,resources:resources}
            res.json(projectData)
     } catch(err) {
         next(err)

@@ -13,8 +13,8 @@ function taskByID(id) {
 }
 
 
-function addTask(project) {
-    return db("tasks").insert(project)
+function addTask(task) {
+    return db("tasks").insert(task)
 }
 
 module.exports = {
